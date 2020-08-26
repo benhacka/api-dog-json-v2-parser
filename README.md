@@ -47,7 +47,7 @@ You need a **python version of at least 3.6**.
 
 #### Installation from pipy
 
-It has not be uploaded in pipy yet. 
+```pip install api-dog-json-v2-parser```
 
 #### Installation from source
 1.  Clone the repo
