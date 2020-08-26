@@ -1,3 +1,5 @@
 .idea/
 *.json
 *__pycache__
+api_dog_parser.egg-info
+dist/
