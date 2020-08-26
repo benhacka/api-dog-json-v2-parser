@@ -122,7 +122,7 @@ api-dog-pv2 ~/.stop-using-vk/dialogs_with_Polina -c OPPONENT
 api-dog-pv2 ~/.my-company-dialogs/hard-party -c ALL_EXCEPT_PAIR
 ```
 
-5.  Download all my ~(not stolen photos of course ;) )~ photos from different dialogs.
+5.  Download all your ~(not stolen photos of course ;) )~ photos from different dialogs.
 ```sh
 api-dog-pv2 ~/.hack-place/stoled_Natashas_photos -c OWNER --custom-name to_do___sort_nude
 ```
