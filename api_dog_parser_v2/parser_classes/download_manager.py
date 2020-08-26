@@ -9,8 +9,8 @@ import aiofiles
 import aiohttp
 from tqdm import tqdm
 
-from vk_parser_v2.constants_and_enum import HEADER
-from vk_parser_v2.parser_classes.name_grabber import NameGrabber
+from api_dog_parser_v2.constants_and_enum import HEADER
+from api_dog_parser_v2.parser_classes.name_grabber import NameGrabber
 
 
 class DownloadManager:
@@ -112,19 +112,20 @@ class DownloadManager:
             self._download_tuple_list.remove(data)
 
     def download_photos(self):
+        if not self._download_raw_tuple:
+            logging.info('Download list is empty...')
+            logging.info('Finished')
+            return
+
         print('\n')
         time.sleep(0.1)
         logging.info('Download step started')
         self._grab_names()
         self._convert_raw_to_normal()
-        len_before_filter = len(self._download_tuple_list)
         logging.info('Filter existing photos')
         self._filter_existing_photos()
         if not self._download_tuple_list:
-            if not len_before_filter:
-                logging.info('Download list is empty...')
-            else:
-                logging.info('All photos were filtered!')
+            logging.info('All photos were filtered!')
             return
         logging.info('Downloading pictures')
         tqdm_ = tqdm(total=len(self._download_tuple_list))

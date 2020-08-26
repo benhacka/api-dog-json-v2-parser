@@ -2,8 +2,8 @@ import logging
 import os
 from typing import Dict, List
 
-from vk_parser_v2.constants_and_enum import VERIFY_FILE_HEAD, GrabbingFilter
-from vk_parser_v2.parser_classes.single_parser import SingleDialogParser
+from api_dog_parser_v2.constants_and_enum import VERIFY_FILE_HEAD, GrabbingFilter
+from api_dog_parser_v2.parser_classes.single_parser import SingleDialogParser
 
 
 class ParserManager:

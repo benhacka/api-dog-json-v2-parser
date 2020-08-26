@@ -5,7 +5,7 @@ from typing import Tuple, Match, List, Union
 import aiohttp
 from tqdm import tqdm
 
-from vk_parser_v2.constants_and_enum import TITLE_RE
+from api_dog_parser_v2.constants_and_enum import TITLE_RE
 
 
 class NameGrabber:

@@ -4,7 +4,7 @@ from typing import List
 
 from tqdm.auto import tqdm
 
-from vk_parser_v2.constants_and_enum import GrabbingFilter
+from api_dog_parser_v2.constants_and_enum import GrabbingFilter
 
 
 class SingleDialogParser:

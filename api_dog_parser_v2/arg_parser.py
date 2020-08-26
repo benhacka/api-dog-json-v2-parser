@@ -3,7 +3,7 @@ import logging
 import os
 from typing import Dict, Any
 
-from vk_parser_v2.constants_and_enum import GrabbingFilter
+from api_dog_parser_v2.constants_and_enum import GrabbingFilter
 
 
 def arg_parser():
@@ -78,7 +78,9 @@ def arg_parser():
 
 def collect_path_list(args_dict: dict):
 
-    paths = set(os.path.abspath(path) for path in args_dict['paths'])
+    paths = set(
+        os.path.abspath(path) for path in args_dict['paths']
+        if os.path.exists(path))
     if args_dict.pop('recursive'):
         for path in paths.copy():
             for root_dir, dirnames, _ in os.walk(path):
@@ -90,6 +92,10 @@ def collect_path_list(args_dict: dict):
                 f'folders with --recursive flag')
         logging.info(_msg)
     else:
+        if not paths:
+            logging.warning('There are no existing paths!')
+            logging.warning('Check an argument with path (first arg).')
+            return []
         _paths = args_dict['paths']
         if len(_paths) == 1:
             abs_path = os.path.abspath(_paths[0])
